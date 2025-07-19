@@ -1,0 +1,38 @@
+.food-categories {
+  display: flex;
+  gap: 12px;
+  margin: 1rem 0 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.food-tag {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-light);
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.food-tag.active {
+  background-color: var(--color-secondary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.food-tag:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.category-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
