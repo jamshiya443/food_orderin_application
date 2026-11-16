@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './FoodCategories.css';
 
@@ -6,8 +7,6 @@ import pizzaIcon from '../assets/icons/pizza.jpeg';
 import chickenIcon from '../assets/icons/fried-chicken.png';
 import friesIcon from '../assets/icons/fries.jpeg';
 import drinkIcon from '../assets/icons/drinks.jpeg';
-
-// highlights food item based on catogary
 
 const categories = [
   { name: 'All', icon: burgerIcon },
@@ -18,19 +17,30 @@ const categories = [
   { name: 'Drinks', icon: drinkIcon },
 ];
 
-const FoodCategories = ({ selectedCategory, onSelectCategory }) => (
-  <div className="food-categories">
-    {categories.map(cat => (
-      <div
-        key={cat.name}
-        className={`food-tag ${selectedCategory === cat.name ? 'active' : ''}`}
-        onClick={() => onSelectCategory(cat.name)}
-      >
-        <img src={cat.icon} alt={cat.name} className="category-icon" />
-        <span>{cat.name}</span>
-      </div>
-    ))}
-  </div>
-);
+const FoodCategories = ({ selectedCategory, onSelectCategory }) => {
+  return (
+    <div className="food-categories">
+      {categories.map((cat) => (
+        <button
+          type="button"
+          key={cat.name}
+          className={`food-tag ${
+            selectedCategory === cat.name ? 'active' : ''
+          }`}
+          onClick={() => onSelectCategory(cat.name)}
+          aria-pressed={selectedCategory === cat.name}
+        >
+          <img
+            src={cat.icon}
+            alt=""
+            className="category-icon"
+          />
+
+          <span>{cat.name}</span>
+        </button>
+      ))}
+    </div>
+  );
+};
 
 export default FoodCategories;

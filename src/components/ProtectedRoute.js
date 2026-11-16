@@ -1,10 +1,18 @@
+
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ allowedRole, children }) => {
-  const auth = JSON.parse(localStorage.getItem('auth')) || null;
+  let auth = null;
 
-  if (!auth || !auth.isLoggedIn) {
+  try {
+    auth = JSON.parse(localStorage.getItem('auth'));
+  } catch (error) {
+    localStorage.removeItem('auth');
+    localStorage.removeItem('token');
+  }
+
+  if (!auth || !auth.isLoggedIn || !auth.role) {
     return <Navigate to="/login" replace />;
   }
 
@@ -12,8 +20,6 @@ const ProtectedRoute = ({ allowedRole, children }) => {
   const expectedRole = allowedRole.toLowerCase();
 
   if (userRole !== expectedRole) {
-    
-    // If wrong role, redirect to the correct panel
     return <Navigate to={`/${userRole}-panel`} replace />;
   }
 

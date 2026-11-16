@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
+
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { clearCart } from '../redux/cartSlice';
 
 const LogoutButton = () => {
-  const [hover, setHover] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('auth');
+    localStorage.removeItem('token');
     localStorage.removeItem('cart');
-    window.location.href = '/login';
+
+    dispatch(clearCart());
+
+    navigate('/login');
   };
 
   return (
     <div style={styles.wrapper}>
       <button
+        type="button"
         onClick={handleLogout}
-        style={{
-          ...styles.button,
-          backgroundColor: hover ? 'var(--color-secondary)' : 'var(--color-primary)',
+        style={styles.button}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = 'var(--color-secondary)';
         }}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'var(--color-primary)';
+        }}
       >
         Logout
       </button>
@@ -34,6 +45,7 @@ const styles = {
   },
   button: {
     color: '#fff',
+    backgroundColor: 'var(--color-primary)',
     border: 'none',
     padding: '10px 25px',
     borderRadius: '8px',

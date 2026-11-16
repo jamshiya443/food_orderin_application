@@ -1,38 +1,72 @@
+
+/*  TASTYCART - FOOD CATEGORIES */
+
+
+
 .food-categories {
   display: flex;
-  gap: 12px;
-  margin: 1rem 0 2rem;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  gap: 14px;
+  margin: 22px 0 30px;
 }
 
 .food-tag {
   display: flex;
   align-items: center;
-  background-color: var(--color-light);
-  padding: 8px 16px;
+  gap: 9px;
+  padding: 10px 18px;
+  background: var(--color-white);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.25s ease;
   user-select: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.food-tag.active {
-  background-color: var(--color-secondary);
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .food-tag:hover {
-  background-color: var(--color-secondary);
-  color: white;
+  background: var(--color-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.food-tag.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(36, 87, 71, 0.2);
 }
 
 .category-icon {
-  width: 28px;
-  height: 28px;
-  margin-right: 10px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+  .food-categories {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .food-tag {
+    padding: 8px 13px;
+    font-size: 0.82rem;
+    gap: 7px;
+  }
+
+  .category-icon {
+    width: 27px;
+    height: 27px;
+  }
 }

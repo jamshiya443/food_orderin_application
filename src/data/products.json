@@ -1,258 +1,35 @@
+
 [
-  {
-    "id": 1,
-    "name": "Classic Cheeseburger",
-    "price": 6.49,
-    
-    "category": "Burger",
-    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 2,
-    "name": "Bacon Cheeseburger",
-    "price": 7.99,
-  
-    "category": "Burger",
-    "image": "https://tse2.mm.bing.net/th/id/OIP.bG4BIR11EQUbjO_SeRwVyAHaE7?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 3,
-    "name": "Mushroom Swiss Burger",
-    "price": 8.49,
-    
-    "category": "Burger",
-    "image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 4,
-    "name": "Pepperoni Pizza",
-    "price": 10.99,
-    
-    "category": "Pizza",
-    "image": "https://tse1.mm.bing.net/th/id/OIP.FAVyFlmAhTpDSDMG7QBTcgHaEK?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 5,
-    "name": "Margherita Pizza",
-    "price": 8.99,
-    
-    "category": "Pizza",
-    "image": "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 6,
-    "name": "BBQ Chicken Pizza",
-    "price": 11.49,
-    
-    "category": "Pizza",
-    "image": "https://tse4.mm.bing.net/th/id/OIP._XJRNqexs3TqmpZHzdj6xAHaLJ?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 7,
-    "name": "Fried Chicken Wings",
-    "price": 9.49,
-   
-    "category": "Fried Chicken",
-    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 8,
-    "name": "Crispy Fried Chicken",
-    "price": 8.99,
-    "stock": 18,
-    "category": "Fried Chicken",
-    "image": "https://i.ytimg.com/vi/pSPWszeTxRc/maxresdefault.jpg"
-  },
-  {
-    "id": 9,
-    "name": "Chicken Tenders",
-    "price": 7.99,
-    "stock": 25,
-    "category": "Fried Chicken",
-    "image": "https://tse1.mm.bing.net/th/id/OIP._X1V05hcsc_QYcvsj2g12gHaLI?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 10,
-    "name": "French Fries",
-    "price": 3.49,
-    "stock": 30,
-    "category": "Fries",
-    "image": "https://tse4.mm.bing.net/th/id/OIP.JMYJnaQpGMH2fnEv9AuF0wHaE8?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 11,
-    "name": "Cheese Fries",
-    "price": 4.99,
-    "stock": 22,
-    "category": "Fries",
-    "image": "https://tse2.mm.bing.net/th/id/OIP.uHHiCn5Q5o1JIZ6OnoIF-gHaEC?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 12,
-    "name": "Curly Fries",
-    "price": 4.49,
-    "stock": 18,
-    "category": "Fries",
-    "image": "https://tse1.mm.bing.net/th/id/OIP.EwoJkw4F6OY609oJVvlVpwHaEv?pid=Api"
-  },
-  {
-    "id": 13,
-    "name": "Cola Drink",
-    "price": 1.99,
-    "stock": 40,
-    "category": "Drinks",
-    "image": "https://tse1.mm.bing.net/th/id/OIP.z7ZW0RIfa_H7dq2hv7cPJQHaHa?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 14,
-    "name": "Orange Juice",
-    "price": 2.49,
-    "stock": 35,
-    "category": "Drinks",
-    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 15,
-    "name": "Lemonade",
-    "price": 2.29,
-    "stock": 38,
-    "category": "Drinks",
-    "image": "https://tse1.mm.bing.net/th/id/OIP.8cXXRnZen-TLoIlNMaq2QQHaHa?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 16,
-    "name": "Iced Tea",
-    "price": 1.99,
-    "stock": 28,
-    "category": "Drinks",
-    "image": "https://natashaskitchen.com/wp-content/uploads/2021/07/Iced-Tea-3-1-1024x1536.jpg"
-  },
-  {
-    "id": 17,
-    "name": "Veggie Burger",
-    "price": 7.49,
-    "stock": 15,
-    "category": "Burger",
-    "image": "https://tse4.mm.bing.net/th/id/OIP.tYPcBnTxuEEyOHt6NAbCQAHaE8?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 18,
-    "name": "Double Cheeseburger",
-    "price": 9.99,
-    "stock": 10,
-    "category": "Burger",
-    "image": "https://recipes.net/wp-content/uploads/2023/05/hardees-double-cheeseburger-recipe_d48b79ef43b714e98a3ad95a7ab9e12e-768x768.jpeg"
-  },
-  {
-    "id": 19,
-    "name": "Spicy Jalapeno Burger",
-    "price": 9.49,
-    "stock": 11,
-    "category": "Burger",
-    "image": "http://crownlist.com/images/spicyjalapenoburger.jpg"
-  },
-  {
-    "id": 20,
-    "name": "Breakfast Burger",
-    "price": 8.49,
-    "stock": 10,
-    "category": "Burger",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 21,
-    "name": "Hawaiian Pizza",
-    "price": 9.49,
-    "stock": 14,
-    "category": "Pizza",
-    "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 22,
-    "name": "Veggie Pizza",
-    "price": 8.99,
-    "stock": 12,
-    "category": "Pizza",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 23,
-    "name": "Buffalo Wings",
-    "price": 10.49,
-    "stock": 16,
-    "category": "Fried Chicken",
-    "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 24,
-    "name": "Loaded Fries",
-    "price": 5.49,
-    "stock": 20,
-    "category": "Fries",
-    "image": "https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 25,
-    "name": "Mocktail",
-    "price": 2.29,
-    "stock": 30,
-    "category": "Drinks",
-    "image": "https://tse1.mm.bing.net/th/id/OIP.ufiMRtC6GDN3_RHqiSORlAHaJM?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 26,
-    "name": "Mozzarella Sticks",
-    "price": 6.99,
-    "stock": 25,
-    "category": "Fries",
-    "image": "https://tse2.mm.bing.net/th/id/OIP.35VkVKJM7LO2NhH9IKEXGAHaHE?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 27,
-    "name": "BBQ Ribs",
-    "price": 12.99,
-    "stock": 8,
-    "category": "Fried Chicken",
-    "image": "https://tse4.mm.bing.net/th/id/OIP.fsongc3-IqUz3xGRkIqrNAHaE8?pid=Api&P=0&h=220"
-  },
-  {
-    "id": 28,
-    "name": "Club Soda",
-    "price": 1.79,
-    "stock": 40,
-    "category": "Drinks",
-    "image": "https://i5.walmartimages.com/seo/Polar-Beverages-Club-Soda-Mixer-Liquids-7-5-oz-6-Pack-Cans_dac8908e-0308-4b3c-b99b-2ffb7faf07f3.2f57fbdb86796517687316c0ddb3e55a.jpeg"
-  },
-  {
-    "id": 29,
-    "name": "Sweet Potato Fries",
-    "price": 4.99,
-    "stock": 20,
-    "category": "Fries",
-    "image": "https://damnspicy.com/wp-content/uploads/2021/01/crispy-sweet-potato-fries-with-aioli-sauce-4-scaled.jpg"
-  },
-  {
-    "id": 30,
-    "name": "Iced Coffee",
-    "price": 3.49,
-    "stock": 35,
-    "category": "Drinks",
-    "image": "https://www.windingcreekranch.org/wp-content/uploads/2022/05/Homemade-iced-coffee-1200-1200.jpg"
-  },
-  {
-    "id": 31,
-    "name": "Grilled Chicken Burger",
-    "price": 7.99,
-    "stock": 16,
-    "category": "Burger",
-    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    "id": 32,
-    "name": "Buffalo Chicken Pizza",
-    "price": 11.99,
-    "stock": 13,
-    "category": "Pizza",
-    "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
-  }
+  {"id":1,"name":"Classic Cheeseburger","description":"A juicy grilled beef patty topped with melted cheese, fresh lettuce and our special burger sauce.","price":149,"stock":20,"category":"Burger","image":"https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"},
+  {"id":2,"name":"Bacon Cheeseburger","description":"A delicious beef burger topped with crispy bacon, melted cheese and fresh toppings.","price":179,"stock":15,"category":"Burger","image":"https://tse2.mm.bing.net/th/id/OIP.bG4BIR11EQUbjO_SeRwVyAHaE7?pid=Api&P=0&h=220"},
+  {"id":3,"name":"Mushroom Swiss Burger","description":"A juicy burger topped with sautéed mushrooms and creamy Swiss cheese.","price":189,"stock":12,"category":"Burger","image":"https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80"},
+  {"id":4,"name":"Pepperoni Pizza","description":"A classic pizza topped with rich tomato sauce, melted mozzarella and spicy pepperoni slices.","price":299,"stock":18,"category":"Pizza","image":"https://tse1.mm.bing.net/th/id/OIP.FAVyFlmAhTpDSDMG7QBTcgHaEK?pid=Api&P=0&h=220"},
+  {"id":5,"name":"Margherita Pizza","description":"A simple and delicious pizza topped with fresh tomato sauce, mozzarella cheese and basil.","price":249,"stock":20,"category":"Pizza","image":"https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=80"},
+  {"id":6,"name":"BBQ Chicken Pizza","description":"A flavourful pizza topped with tender chicken, smoky BBQ sauce and melted cheese.","price":329,"stock":15,"category":"Pizza","image":"https://tse4.mm.bing.net/th/id/OIP._XJRNqexs3TqmpZHzdj6xAHaLJ?pid=Api&P=0&h=220"},
+  {"id":7,"name":"Fried Chicken Wings","description":"Crispy golden chicken wings seasoned with delicious spices and served hot.","price":199,"stock":20,"category":"Fried Chicken","image":"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"},
+  {"id":8,"name":"Crispy Fried Chicken","description":"Juicy chicken pieces coated in a crunchy, golden seasoned crust.","price":189,"stock":18,"category":"Fried Chicken","image":"https://i.ytimg.com/vi/pSPWszeTxRc/maxresdefault.jpg"},
+  {"id":9,"name":"Chicken Tenders","description":"Tender chicken strips coated in crispy breadcrumbs and fried until golden.","price":169,"stock":25,"category":"Fried Chicken","image":"https://tse1.mm.bing.net/th/id/OIP._X1V05hcsc_QYcvsj2g12gHaLI?pid=Api&P=0&h=220"},
+  {"id":10,"name":"French Fries","description":"Classic golden potato fries with a crispy outside and soft, fluffy centre.","price":79,"stock":30,"category":"Fries","image":"https://tse4.mm.bing.net/th/id/OIP.JMYJnaQpGMH2fnEv9AuF0wHaE8?pid=Api&P=0&h=220"},
+  {"id":11,"name":"Cheese Fries","description":"Crispy French fries generously topped with smooth and creamy melted cheese.","price":119,"stock":22,"category":"Fries","image":"https://tse2.mm.bing.net/th/id/OIP.uHHiCn5Q5o1JIZ6OnoIF-gHaEC?pid=Api&P=0&h=220"},
+  {"id":12,"name":"Curly Fries","description":"Crispy spiral-cut potato fries seasoned with a tasty blend of spices.","price":99,"stock":18,"category":"Fries","image":"https://tse1.mm.bing.net/th/id/OIP.EwoJkw4F6OY609oJVvlVpwHaEv?pid=Api"},
+  {"id":13,"name":"Cola Drink","description":"A refreshing chilled cola drink with a fizzy and sweet taste.","price":49,"stock":40,"category":"Drinks","image":"https://tse1.mm.bing.net/th/id/OIP.z7ZW0RIfa_H7dq2hv7cPJQHaHa?pid=Api&P=0&h=220"},
+  {"id":14,"name":"Orange Juice","description":"A refreshing orange drink bursting with sweet and citrusy flavour.","price":79,"stock":35,"category":"Drinks","image":"https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"},
+  {"id":15,"name":"Lemonade","description":"A cool and refreshing lemon drink with a perfect balance of sweet and tangy flavours.","price":69,"stock":38,"category":"Drinks","image":"https://tse1.mm.bing.net/th/id/OIP.8cXXRnZen-TLoIlNMaq2QQHaHa?pid=Api&P=0&h=220"},
+  {"id":16,"name":"Iced Tea","description":"A refreshing chilled tea served over ice for a smooth and cooling taste.","price":59,"stock":28,"category":"Drinks","image":"https://natashaskitchen.com/wp-content/uploads/2021/07/Iced-Tea-3-1-1024x1536.jpg"},
+  {"id":17,"name":"Veggie Burger","description":"A tasty vegetable patty served in a soft bun with fresh lettuce and delicious sauce.","price":129,"stock":15,"category":"Burger","image":"https://tse4.mm.bing.net/th/id/OIP.tYPcBnTxuEEyOHt6NAbCQAHaE8?pid=Api&P=0&h=220"},
+  {"id":18,"name":"Double Cheeseburger","description":"Two juicy beef patties layered with melted cheese in a soft toasted burger bun.","price":219,"stock":10,"category":"Burger","image":"https://recipes.net/wp-content/uploads/2023/05/hardees-double-cheeseburger-recipe_d48b79ef43b714e98a3ad95a7ab9e12e-768x768.jpeg"},
+  {"id":19,"name":"Spicy Jalapeno Burger","description":"A flavour-packed burger topped with spicy jalapeños, melted cheese and special sauce.","price":199,"stock":11,"category":"Burger","image":"http://crownlist.com/images/spicyjalapenoburger.jpg"},
+  {"id":20,"name":"Breakfast Burger","description":"A satisfying breakfast-style burger with a juicy patty and delicious morning-inspired toppings.","price":179,"stock":10,"category":"Burger","image":"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"},
+  {"id":21,"name":"Hawaiian Pizza","description":"A sweet and savoury pizza topped with juicy pineapple, cheese and delicious toppings.","price":269,"stock":14,"category":"Pizza","image":"https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"},
+  {"id":22,"name":"Veggie Pizza","description":"A colourful pizza topped with fresh vegetables, tomato sauce and melted mozzarella.","price":249,"stock":12,"category":"Pizza","image":"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"},
+  {"id":23,"name":"Buffalo Wings","description":"Crispy chicken wings tossed in a tangy and spicy buffalo-style sauce.","price":219,"stock":16,"category":"Fried Chicken","image":"https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"},
+  {"id":24,"name":"Loaded Fries","description":"Golden crispy fries topped with melted cheese and delicious savoury toppings.","price":139,"stock":20,"category":"Fries","image":"https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80"},
+  {"id":25,"name":"Mocktail","description":"A colourful, refreshing non-alcoholic drink with a delicious fruity flavour.","price":89,"stock":30,"category":"Drinks","image":"https://tse1.mm.bing.net/th/id/OIP.ufiMRtC6GDN3_RHqiSORlAHaJM?pid=Api&P=0&h=220"},
+  {"id":26,"name":"Mozzarella Sticks","description":"Crunchy golden-coated mozzarella sticks with a warm, soft and cheesy centre.","price":159,"stock":25,"category":"Fries","image":"https://tse2.mm.bing.net/th/id/OIP.35VkVKJM7LO2NhH9IKEXGAHaHE?pid=Api&P=0&h=220"},
+  {"id":27,"name":"BBQ Ribs","description":"Tender ribs coated in smoky barbecue sauce for a rich and savoury flavour.","price":349,"stock":8,"category":"Fried Chicken","image":"https://tse4.mm.bing.net/th/id/OIP.fsongc3-IqUz3xGRkIqrNAHaE8?pid=Api&P=0&h=220"},
+  {"id":28,"name":"Club Soda","description":"A crisp and refreshing sparkling water drink with a clean, bubbly finish.","price":39,"stock":40,"category":"Drinks","image":"https://i5.walmartimages.com/seo/Polar-Beverages-Club-Soda-Mixer-Liquids-7-5-oz-6-Pack-Cans_dac8908e-0308-4b3c-b99b-2ffb7faf07f3.2f57fbdb86796517687316c0ddb3e55a.jpeg"},
+  {"id":29,"name":"Sweet Potato Fries","description":"Crispy sweet potato fries with a naturally sweet flavour and golden finish.","price":119,"stock":20,"category":"Fries","image":"https://damnspicy.com/wp-content/uploads/2021/01/crispy-sweet-potato-fries-with-aioli-sauce-4-scaled.jpg"},
+  {"id":30,"name":"Iced Coffee","description":"A smooth and refreshing chilled coffee served over ice.","price":99,"stock":35,"category":"Drinks","image":"https://www.windingcreekranch.org/wp-content/uploads/2022/05/Homemade-iced-coffee-1200-1200.jpg"},
+  {"id":31,"name":"Grilled Chicken Burger","description":"A tender grilled chicken fillet served in a soft bun with fresh vegetables and sauce.","price":169,"stock":16,"category":"Burger","image":"https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"},
+  {"id":32,"name":"Buffalo Chicken Pizza","description":"A delicious pizza topped with tender chicken, spicy buffalo sauce and melted cheese.","price":329,"stock":13,"category":"Pizza","image":"https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"}
 ]
