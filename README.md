@@ -1,155 +1,110 @@
-# TastyCart – Online Food Ordering Application
+# 🍔 TastyCart – Online Food Ordering Application
 
-TastyCart is a full-stack food ordering web application built using the MERN stack. It allows customers to browse food products, manage their cart, place orders, and track their order history. Administrators can manage products and customer orders through an admin dashboard.
+TastyCart is a full-stack food ordering web application built using the MERN stack. It allows customers to browse food products, add items to their cart, place orders, and track their order history. Administrators can manage products and monitor customer orders through an admin dashboard.
 
-## Live Application
+## 🌐 Live Application
 
-- **Frontend:** https://tastycart-theta.vercel.app/
-- **Backend API:** https://food-ordering-backend-773w.onrender.com
+**Frontend:** https://tastycart-theta.vercel.app/
 
-## Features
+**Frontend Repository:** https://github.com/jamshiya443/food_orderin_application
+
+**Backend Repository:** https://github.com/jamshiya443/food_ordering_backend
+
+## ✨ Features
 
 ### Customer Features
 - User registration and login
-- Secure authentication using JWT
+- Secure authentication
 - Browse available food products
-- Filter products by category
-- Add and remove products from cart
-- Update product quantities
+- Add products to cart
+- Manage cart items
 - Place food orders
-- View order history
+- View personal order history
 
 ### Admin Features
 - Admin dashboard
-- Add new products
-- Edit existing products
-- Delete products
-- Manage customer orders
+- Manage food products
+- View customer orders
+- View order details
 - Update order statuses
+- Monitor order management
 
-### Additional Features
-- Responsive user interface
-- Protected routes based on user roles
-- MongoDB database integration
-- Password hashing for secure storage
-
-## Technology Stack
+## 🛠️ Technologies Used
 
 **Frontend**
 - React.js
-- React Router
-- Redux Toolkit
+- JavaScript
+- HTML5
 - CSS
+- React Router DOM
 
 **Backend**
 - Node.js
 - Express.js
+- REST API
+
+**Database**
 - MongoDB
+- MongoDB Atlas
 - Mongoose
-- JSON Web Token (JWT)
-- bcryptjs
 
 **Deployment**
-- Vercel – Frontend hosting
-- Render – Backend hosting
-- MongoDB Atlas – Cloud database
+- Vercel – Frontend
+- Render – Backend
+- MongoDB Atlas – Database
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 food_orderin_application/
 │
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   ├── package.json
-│   └── README.md
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.js
+│   └── index.js
 │
-└── backend/
-    ├── config/
-    ├── controllers/
-    ├── middleware/
-    ├── models/
-    ├── routes/
-    ├── server.js
-    └── package.json
+├── package.json
+└── README.md
 ```
 
-## Installation and Setup
+## 🚀 Run the Frontend Locally
 
-### 1. Clone the Repository
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/jamshiya443/food_orderin_application.git
 ```
 
-### 2. Navigate to the Frontend
+2. Navigate to the frontend folder:
 
 ```bash
-cd food_orderin_application/frontend
+cd food_orderin_application
 ```
 
-### 3. Install Dependencies
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-### 4. Configure Environment Variables
-
-Create a `.env` file in the frontend folder:
-
-```env
-REACT_APP_API_URL=http://localhost:5000/api
-```
-
-### 5. Start the Frontend
+4. Start the application:
 
 ```bash
 npm start
 ```
 
-The frontend will run at:
+5. Open the application at:
 
+```text
 http://localhost:3000
-
-## Backend Setup
-
-The backend is maintained in a separate repository.
-
-```bash
-git clone https://github.com/jamshiya443/food_ordering_backend.git
-cd food_ordering_backend
-npm install
 ```
 
-Configure the backend environment variables in a private `.env` file:
+## 🔐 User Roles
 
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-CLIENT_URL=http://localhost:3000
-```
+- **User:** Can browse products, manage the cart, place orders, and view personal orders.
+- **Admin:** Can access the admin dashboard, manage products, and manage customer orders.
 
-Start the backend:
+## 📌 Project Objective
 
-```bash
-npm run start
-```
-
-The backend API will run at:
-
-http://localhost:5000
-
-**Important:** Never upload `.env` files or expose database credentials and JWT secrets to GitHub.
-
-## Author
-
-**Fathima Jamshiya**
-
-Full-Stack Development Project
-
----
-
-*TastyCart – Making food ordering simple and convenient.*
+The objective of TastyCart is to develop a functional full-stack food ordering application that demonstrates frontend development, backend API integration, database operations, authentication, role-based access, and application deployment.
