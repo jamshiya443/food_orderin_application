@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LogoutButton from './LogoutButton';
 import API_BASE_URL from '../services/api';
@@ -42,16 +42,16 @@ const AdminPanel = () => {
 
   const navigate = useNavigate();
 
-  const handleSessionExpired = () => {
-    localStorage.removeItem('auth');
-    localStorage.removeItem('token');
-    localStorage.removeItem('cart');
+ const handleSessionExpired = useCallback(() => {
+  localStorage.removeItem('auth');
+  localStorage.removeItem('token');
+  localStorage.removeItem('cart');
 
-    navigate('/login', { replace: true });
-  };
+  navigate('/login', { replace: true });
+}, [navigate]);
 
   // FETCH PRODUCTS
-  const fetchProducts = async () => {
+ const fetchProducts = useCallback(async () => {
     try {
       setError('');
 
@@ -70,10 +70,10 @@ const AdminPanel = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   // FETCH ALL ORDERS (ADMIN)
-  const fetchOrders = async () => {
+ const fetchOrders = useCallback(async () => {
     try {
       setOrdersError('');
 
@@ -109,12 +109,12 @@ const AdminPanel = () => {
     } finally {
       setOrdersLoading(false);
     }
-  };
+  }, [handleSessionExpired]);
 
-  useEffect(() => {
-    fetchProducts();
-    fetchOrders();
-  }, []);
+useEffect(() => {
+  fetchProducts();
+  fetchOrders();
+}, [fetchProducts, fetchOrders]);
 
   // PRODUCT FORM
   const handleChange = (e) => {
@@ -620,7 +620,7 @@ const AdminPanel = () => {
 
 
       {/* ORDERS MANAGEMENT */}
-      
+
       <section id="orders-management" className="admin-menu-section orders-management">
 
         <div className="orders-heading">
