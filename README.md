@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# TastyCart – Online Food Ordering Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TastyCart is a full-stack food ordering web application built using the MERN stack. It allows customers to browse food products, manage their cart, place orders, and track their order history. Administrators can manage products and customer orders through an admin dashboard.
 
-## Available Scripts
+## Live Application
 
-In the project directory, you can run:
+- **Frontend:** https://tastycart-theta.vercel.app/
+- **Backend API:** https://food-ordering-backend-773w.onrender.com
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Customer Features
+- User registration and login
+- Secure authentication using JWT
+- Browse available food products
+- Filter products by category
+- Add and remove products from cart
+- Update product quantities
+- Place food orders
+- View order history
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Admin Features
+- Admin dashboard
+- Add new products
+- Edit existing products
+- Delete products
+- Manage customer orders
+- Update order statuses
 
-### `npm test`
+### Additional Features
+- Responsive user interface
+- Protected routes based on user roles
+- MongoDB database integration
+- Password hashing for secure storage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology Stack
 
-### `npm run build`
+**Frontend**
+- React.js
+- React Router
+- Redux Toolkit
+- CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Backend**
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JSON Web Token (JWT)
+- bcryptjs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Deployment**
+- Vercel – Frontend hosting
+- Render – Backend hosting
+- MongoDB Atlas – Cloud database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```text
+food_orderin_application/
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── README.md
+│
+└── backend/
+    ├── config/
+    ├── controllers/
+    ├── middleware/
+    ├── models/
+    ├── routes/
+    ├── server.js
+    └── package.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation and Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/jamshiya443/food_orderin_application.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Navigate to the Frontend
 
-## Learn More
+```bash
+cd food_orderin_application/frontend
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Install Dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install
+```
 
-### Code Splitting
+### 4. Configure Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Create a `.env` file in the frontend folder:
 
-### Analyzing the Bundle Size
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 5. Start the Frontend
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The frontend will run at:
 
-### Advanced Configuration
+http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Backend Setup
 
-### Deployment
+The backend is maintained in a separate repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+git clone https://github.com/jamshiya443/food_ordering_backend.git
+cd food_ordering_backend
+npm install
+```
 
-### `npm run build` fails to minify
+Configure the backend environment variables in a private `.env` file:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+CLIENT_URL=http://localhost:3000
+```
+
+Start the backend:
+
+```bash
+npm run start
+```
+
+The backend API will run at:
+
+http://localhost:5000
+
+**Important:** Never upload `.env` files or expose database credentials and JWT secrets to GitHub.
+
+## Author
+
+**Fathima Jamshiya**
+
+Full-Stack Development Project
+
+---
+
+*TastyCart – Making food ordering simple and convenient.*
