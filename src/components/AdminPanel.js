@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import LogoutButton from './LogoutButton';
 import API_BASE_URL from '../services/api';
 import '../styles.css';
+import './AdminOrders.css';
 
 const initialProduct = {
   name: '',
@@ -13,6 +14,15 @@ const initialProduct = {
   category: '',
   image: ''
 };
+
+const ORDER_STATUSES = [
+  'Pending',
+  'Confirmed',
+  'Preparing',
+  'Out for Delivery',
+  'Delivered',
+  'Cancelled'
+];
 
 const AdminPanel = () => {
   const [product, setProduct] = useState(initialProduct);
@@ -24,6 +34,12 @@ const AdminPanel = () => {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
 
+  // Orders state
+  const [orders, setOrders] = useState([]);
+  const [ordersLoading, setOrdersLoading] = useState(true);
+  const [ordersError, setOrdersError] = useState('');
+  const [updatingOrderId, setUpdatingOrderId] = useState(null);
+
   const navigate = useNavigate();
 
   const handleSessionExpired = () => {
@@ -34,6 +50,7 @@ const AdminPanel = () => {
     navigate('/login', { replace: true });
   };
 
+  // FETCH PRODUCTS
   const fetchProducts = async () => {
     try {
       setError('');
@@ -55,10 +72,51 @@ const AdminPanel = () => {
     }
   };
 
+  // FETCH ALL ORDERS (ADMIN)
+  const fetchOrders = async () => {
+    try {
+      setOrdersError('');
+
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        handleSessionExpired();
+        return;
+      }
+
+      const response = await fetch(`${API_BASE_URL}/orders`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      const data = await response.json();
+
+      if (response.status === 401) {
+        handleSessionExpired();
+        return;
+      }
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to fetch orders');
+      }
+
+      setOrders(data.orders || []);
+
+    } catch (error) {
+      console.error('Fetch orders error:', error);
+      setOrdersError(error.message || 'Unable to load orders.');
+    } finally {
+      setOrdersLoading(false);
+    }
+  };
+
   useEffect(() => {
     fetchProducts();
+    fetchOrders();
   }, []);
 
+  // PRODUCT FORM
   const handleChange = (e) => {
     setProduct(prev => ({
       ...prev,
@@ -266,6 +324,74 @@ const AdminPanel = () => {
     }
   };
 
+  // UPDATE ORDER STATUS
+  const handleOrderStatusChange = async (orderId, newStatus) => {
+    if (updatingOrderId) return;
+
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      handleSessionExpired();
+      return;
+    }
+
+    setOrdersError('');
+    setUpdatingOrderId(orderId);
+
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/orders/${orderId}/status`,
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            status: newStatus
+          })
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.status === 401) {
+        handleSessionExpired();
+        return;
+      }
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to update order status');
+      }
+
+      setOrders(prevOrders =>
+        prevOrders.map(order =>
+          order._id === orderId
+            ? { ...order, status: data.order?.status || newStatus }
+            : order
+        )
+      );
+
+    } catch (error) {
+      console.error('Update order status error:', error);
+      setOrdersError(error.message || 'Unable to update order status.');
+    } finally {
+      setUpdatingOrderId(null);
+    }
+  };
+
+  const formatDate = (date) => {
+    if (!date) return 'Date unavailable';
+
+    return new Date(date).toLocaleString('en-IN', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
   return (
     <div className="container-wide admin-panel">
 
@@ -298,7 +424,6 @@ const AdminPanel = () => {
         </div>
 
         <form className="admin-product-form" onSubmit={handleSubmit}>
-
           <div className="admin-form-grid">
 
             <div className="admin-form-group">
@@ -415,7 +540,6 @@ const AdminPanel = () => {
               </button>
             )}
           </div>
-
         </form>
       </section>
 
@@ -494,6 +618,162 @@ const AdminPanel = () => {
 
       </section>
 
+
+      {/* ORDERS MANAGEMENT */}
+      
+      <section id="orders-management" className="admin-menu-section orders-management">
+
+        <div className="orders-heading">
+          <div>
+            <span className="orders-eyebrow">TASTYCART MANAGEMENT</span>
+            <h2>Orders Management</h2>
+            <p>Track customer orders and manage their delivery status.</p>
+          </div>
+          <div className="orders-total-pill">
+            {orders.length} Total Orders
+          </div>
+        </div>
+
+        <div className="orders-summary-grid">
+          <div className="orders-summary-card">
+            <span className="summary-icon">🛍️</span>
+            <div>
+              <span className="summary-label">All Orders</span>
+              <strong>{orders.length}</strong>
+            </div>
+          </div>
+
+          <div className="orders-summary-card summary-pending">
+            <span className="summary-icon">🕒</span>
+            <div>
+              <span className="summary-label">Pending</span>
+              <strong>{orders.filter(order => order.status === 'Pending').length}</strong>
+            </div>
+          </div>
+
+          <div className="orders-summary-card summary-progress">
+            <span className="summary-icon">🍳</span>
+            <div>
+              <span className="summary-label">In Progress</span>
+              <strong>
+                {orders.filter(order =>
+                  ['Confirmed', 'Preparing', 'Out for Delivery'].includes(order.status)
+                ).length}
+              </strong>
+            </div>
+          </div>
+
+          <div className="orders-summary-card summary-delivered">
+            <span className="summary-icon">✓</span>
+            <div>
+              <span className="summary-label">Delivered</span>
+              <strong>{orders.filter(order => order.status === 'Delivered').length}</strong>
+            </div>
+          </div>
+        </div>
+
+        {ordersLoading ? (
+          <div className="orders-empty-state">
+            <span className="orders-empty-icon">⏳</span>
+            <p>Loading orders...</p>
+          </div>
+        ) : ordersError && orders.length === 0 ? (
+          <p className="admin-message error-message">{ordersError}</p>
+        ) : orders.length === 0 ? (
+          <div className="orders-empty-state">
+            <span className="orders-empty-icon">🛍️</span>
+            <h3>No orders yet</h3>
+            <p>New customer orders will appear here.</p>
+          </div>
+        ) : (
+          <div className="orders-cards-grid">
+            {orders.map(order => (
+              <article className="order-admin-card" key={order._id}>
+
+                <div className="order-card-top">
+                  <div>
+                    <span className="order-number-label">ORDER ID</span>
+                    <h3>#{order._id.slice(-6).toUpperCase()}</h3>
+                  </div>
+                  <span
+                    className={`order-status-badge status-${(order.status || 'pending').toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    {order.status || 'Pending'}
+                  </span>
+                </div>
+
+                <div className="order-customer-block">
+                  <div className="order-customer-avatar">
+                    {(order.user?.name || 'C').charAt(0).toUpperCase()}
+                  </div>
+                  <div className="order-customer-details">
+                    <strong>{order.user?.name || 'Customer'}</strong>
+                    <span>{order.user?.email || 'Email not available'}</span>
+                  </div>
+                </div>
+
+                <div className="order-date-row">
+                  <span>📅 Order placed</span>
+                  <strong>{formatDate(order.createdAt)}</strong>
+                </div>
+
+                <div className="order-items-block">
+                  <div className="order-items-heading">
+                    <strong>Order items</strong>
+                    <span>{order.items?.length || 0} item(s)</span>
+                  </div>
+
+                  {order.items?.map((item, index) => (
+                    <div className="order-item-row" key={item._id || index}>
+                      <div>
+                        <strong>{item.name}</strong>
+                        <span>Qty: {item.quantity}</span>
+                      </div>
+                      <strong>
+                        ₹{(Number(item.price) * Number(item.quantity)).toFixed(2)}
+                      </strong>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="order-total-row">
+                  <span>Total amount</span>
+                  <strong>₹{Number(order.totalAmount || 0).toFixed(2)}</strong>
+                </div>
+
+                <div className="order-status-control">
+                  <label htmlFor={`status-${order._id}`}>Update order status</label>
+                  <select
+                    id={`status-${order._id}`}
+                    value={order.status || 'Pending'}
+                    onChange={(e) =>
+                      handleOrderStatusChange(order._id, e.target.value)
+                    }
+                    disabled={Boolean(updatingOrderId)}
+                  >
+                    {ORDER_STATUSES.map(status => (
+                      <option key={status} value={status}>
+                        {status}
+                      </option>
+                    ))}
+                  </select>
+                  {updatingOrderId === order._id && (
+                    <small>Saving status...</small>
+                  )}
+                </div>
+
+              </article>
+            ))}
+          </div>
+        )}
+
+        {ordersError && orders.length > 0 && (
+          <p className="admin-message error-message">{ordersError}</p>
+        )}
+
+      </section>
+
+      {/* LOGOUT */}
       <div className="admin-logout">
         <LogoutButton />
       </div>

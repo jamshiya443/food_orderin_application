@@ -28,16 +28,40 @@ const Navbar = () => {
           }
         }}
       >
-        <span className="navbar__brand">TastyCart<span>.</span></span>
+        <span className="navbar__brand">
+          TastyCart<span>.</span>
+        </span>
       </div>
 
       <div className="navbar__right">
+
         <Link
           to={isAdmin ? '/admin-panel' : '/user-panel'}
           className="navbar__link"
         >
           Home
         </Link>
+
+        {isAdmin && (
+          <a
+  href="#orders-management"
+  className="navbar__link"
+  onClick={(e) => {
+    e.preventDefault();
+
+    const ordersSection = document.getElementById('orders-management');
+
+    if (ordersSection) {
+      ordersSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }}
+>
+  Orders
+</a>
+        )}
 
         {isUser && (
           <Link to="/my-orders" className="navbar__link">
@@ -54,6 +78,7 @@ const Navbar = () => {
             Cart
           </Link>
         )}
+
       </div>
     </nav>
   );
