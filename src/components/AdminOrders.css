@@ -127,15 +127,17 @@
   height: 100%;
   padding: 23px;
   background: #fff;
-  border: 1px solid #e5ebe6;
+  border: 1px solid rgba(196, 154, 85, 0.55);
   border-radius: 17px;
-  box-shadow: 0 3px 12px rgba(28, 66, 48, 0.035);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(196, 154, 85, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .order-admin-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(36, 87, 71, 0.09);
+  border-color: #c49a55;
+  box-shadow: 0 9px 24px rgba(196, 154, 85, 0.16);
 }
 
 /* ORDER HEADER */
