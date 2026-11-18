@@ -1,8 +1,8 @@
-# 🍔 TastyCart – Online Food Ordering Application
+# TastyCart – Online Food Ordering Application
 
 TastyCart is a full-stack food ordering web application built using the MERN stack. It allows customers to browse food products, add items to their cart, place orders, and track their order history. Administrators can manage products and monitor customer orders through an admin dashboard.
 
-## 🌐 Live Application
+##  Live Application
 
 **Frontend:** https://tastycart-theta.vercel.app/
 
@@ -10,7 +10,7 @@ TastyCart is a full-stack food ordering web application built using the MERN sta
 
 **Backend Repository:** https://github.com/jamshiya443/food_ordering_backend
 
-## ✨ Features
+##  Features
 
 ### Customer Features
 - User registration and login
@@ -29,7 +29,7 @@ TastyCart is a full-stack food ordering web application built using the MERN sta
 - Update order statuses
 - Monitor order management
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 **Frontend**
 - React.js
@@ -53,7 +53,7 @@ TastyCart is a full-stack food ordering web application built using the MERN sta
 - Render – Backend
 - MongoDB Atlas – Database
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 food_orderin_application/
@@ -68,7 +68,7 @@ food_orderin_application/
 └── README.md
 ```
 
-## 🚀 Run the Frontend Locally
+##  Run the Frontend Locally
 
 1. Clone the repository:
 
@@ -100,11 +100,11 @@ npm start
 http://localhost:3000
 ```
 
-## 🔐 User Roles
+##  User Roles
 
 - **User:** Can browse products, manage the cart, place orders, and view personal orders.
 - **Admin:** Can access the admin dashboard, manage products, and manage customer orders.
 
-## 📌 Project Objective
+##  Project Objective
 
 The objective of TastyCart is to develop a functional full-stack food ordering application that demonstrates frontend development, backend API integration, database operations, authentication, role-based access, and application deployment.
